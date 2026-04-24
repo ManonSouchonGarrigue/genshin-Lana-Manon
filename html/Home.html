@@ -14,67 +14,134 @@
         <a href="Armes.html">Armes</a>
         <a href="Quiz.html">Quiz</a>
         </header>
-        <section>
+
+
+
+
+
+
+        <section id="accueil">
             <img src="../img/accueuil.jpg" alt="photo de genshin">
-            <h1>Bienvenue à Teyvat!</h1>
-            <p>Teyvat est un monde vaste et mystérieux où les éléments façonnent toute chose. Incarnez un voyageur venu d'un autre monde et partez à la recherche de votre proche disparu. Au fil de votre aventure, explorez des terres uniques, rencontrez des personnages aux pouvoirs variés et maîtrisez les sept éléments pour vaincre vos enemis. Vous avez tout les informations qu'il vous faut ici !</p>
-            <input type="button" value="Découvrir">
+            <div id="accueil_text">
+                <h1>Bienvenue à Teyvat!</h1>
+                <p>Teyvat est un monde vaste et mystérieux où les éléments façonnent toute chose. Incarnez un voyageur venu d'un autre monde et partez à la recherche de votre proche disparu. Au fil de votre aventure, explorez des terres uniques, rencontrez des personnages aux pouvoirs variés et maîtrisez les sept éléments pour vaincre vos enemis. Vous avez tout les informations qu'il vous faut ici !</p>
+                <a href="https://genshin.hoyoverse.com/fr/home">
+                    <button>Découvrir</button>
+                </a>
+                
+            </div>
         </section>
-        <section>
-            <a href="Personnages.html">
-                <img src="../img/perso.jpg" alt="bannière personnages">
-            </a>
-            <h2>Bannière de personnages</h2>
-            <a>
-                <img src="../img/arme.jpg" alt="bannière armes">
-            </a>
-            <h2>Bannière d'armes</h2>
-            <a>
-                <img src="../img/banniere.webp" alt="bannière permanente">
-            </a>
-            <h2>Bannière permanente</h2>
+
+
+
+
+
+
+
+        <section id="description">
+            <div class="des">
+                <a href="Personnages.html">
+                    <img src="../img/perso.jpg" alt="bannière personnages">
+                </a>
+            <h3>Bannière de personnages</h3>
+
+            </div>
+            <div class="des">
+                <a>
+                    <img src="../img/arme.jpg" alt="bannière armes">
+                </a>
+            <h3>Bannière d'armes</h3>
+
+            </div>
+            <div class="des">
+                <a>
+                    <img src="../img/banniere.webp" alt="bannière permanente">
+                </a>
+            <h3>Bannière permanente</h3>
+
+            </div>
+
         </section>
-        <section>
+
+
+
+
+
+
+
+
+
+        <section id="news">
             <h1>Nouveauté</h1>
-            <div id="code echange">
-                <ul>
-                    <li>INUH43366326</li>
-                    <li>FairyGirlLinnea</li>
-                    <li>PSCA8NL4ZSPD</li>
-                    <li>MIXF44DAP7HW</li>
-                    <li>RFVEZO83458Q</li>
-                    <li>8BHA0KFRG94K</li>
-                    <li>GS64YTW65O</li>
-                    <li>BLINYMOIBLINY</li>
-                    <li>8X73KH58KDHN</li>
-                    <li>GENSHINGIFT</li>
-                </ul>
-                <h2>Code d'échange</h2>
+            <div class="container">
+                <div id="code-echange" class="new">
+                    <ul>
+                        <li>INUH43366326</li>
+                        <li>FairyGirlLinnea</li>
+                        <li>PSCA8NL4ZSPD</li>
+                        <li>MIXF44DAP7HW</li>
+                        <li>RFVEZO83458Q</li>
+                        <li>8BHA0KFRG94K</li>
+                        <li>GS64YTW65O</li>
+                        <li>BLINYMOIBLINY</li>
+                        <li>8X73KH58KDHN</li>
+                        <li>GENSHINGIFT</li>
+                    </ul>
+                    <h2>Code d'échange</h2>
+
+                </div>
+                <div id="scenario" class="new">
+                    <img src="../img/histoire.jpg" alt="scénario">
+                    <h2>Scénario</h2>
+                    <p>Révélations récentes relient encore plus fortement Khaenri'ah et les forces supérieures du monde.</p>
+                </div>
+                <div id="Linnea" class="new">
+                    <a href="Personnages.html">
+                        <img src="../img/linnea.webp" alt="Linnea">
+                        <h2>Linnea</h2>
+                        <p>Jeune aventurière curieuse et déterminée, toujours prête à explorer de nouveaux horizons</p> 
+                    </a>
+
+                </div>
 
             </div>
-            <div id="scenario">
-                <img src="../img/histoire.jpg" alt="scénario">
-                <h2>Scénario</h2>
-                <p>Révélations récentes relient encore plus fortement Khaenri'ah et les forces supérieures du monde.</p>
-            </div>
-            <div id="Linnea">
-                <img src="../img/linnea.webp" alt="Linnea">
-                <h2>Linnea</h2>
-                <p>Jeune aventurière curieuse et déterminée, toujours prête à explorer de nouveaux horizons</p> 
-            </div>
+
+            
         </section>
 
-        <section>
+
+
+
+
+
+
+
+
+        <section id="bot">
             <h1>Parlez avec Catherine !</h1>
             <p>Besoin d'aide pour votre aventure à Teyvat ? Catherine, la fidèle assistante de la Guilde des Aventuriers, est là pour vous guider ! Que vous ayez des questions sur les quêtes, les personnages ou les mécanismes du jeu, Catherine est prête à vous fournir des conseils utiles et des informations précieuses. N'hésitez pas à lui poser vos questions et à profiter de son expertise pour rendre votre voyage à Teyvat encore plus agréable !</p>
             <div id="chatbot"></div>
-            <input type="text" id="user-input" placeholder="Saisir le texte...">
-            <button type="button" onclick="fetchJSON('../json/intents.json')">Envoyer</button>
+            <div class="input-zone">
+                <input type="text" id="user-input" placeholder="Saisir le texte...">
+                <button type="button" onclick="fetchJSON('../json/intents.json')">Envoyer</button>
+
+            </div>
+            
         </section>
+
+
+
+
+
+
+
+
+
+
         <footer>
 
             <a href="Home.html"><img class="image" src = "../img/logo.webp" alt = "logo"></a>
-            <div id="social media">
+            <div id="social-media">
                 <a href="https://www.facebook.com/miHoYoGlobal">
                     <img src="../img/facebook.png" alt="facebook">
                 </a>
