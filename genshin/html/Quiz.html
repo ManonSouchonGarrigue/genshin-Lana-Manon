@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quiz</title>
         <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/quiz.js"></script>
     </head>
     <body>
         <header>
@@ -15,23 +16,29 @@
             <a href="Quiz.html">Quiz</a>
         </header>
 
-        <section>
+        <section id="intro">
             <img src="../img/quiz.jpg" alt="photo de quiz">
-            <h1>Quiz</h1>
-            <p>
-                Testez votre connaissances sur Teyvat !
-                Question sur personnages, pays...
-                0-10 debutants
-                10-20 advances
-                20-30 experts
-                30-40 Teyvatiens
-            </p>
-            <input type="button" value="Commencer">
+            <div id="intro_text">
+                <h1>Quiz</h1>
+                <p>
+                    Testez votre connaissances sur Teyvat ! <br>
+                    Question sur personnages, pays... <br>
+                    0-10 debutant<br>
+                    10-20 advance<br>
+                    20-30 expert<br>
+                    30-40 Teyvatien<br>
+                </p>
+
+                
+                <input type="button" value="Commencer" onclick="startQuiz()">
+
+            </div>
 
         </section>
 
         
-        <fieldset class="quiz">
+        <form id="quizForm" style="display:none;">
+            <fieldset class="quiz">
                 <ol>
                     <li>Le monde du jeu s’appelle :
                         <ul class ="questions">
@@ -561,7 +568,7 @@
                             </li>
                             <li>
                                 <input type="radio" id="q27_2" name="q27" value="b" class="quiz">
-                                <label for="q2_2" class="btn_radio">6</label>
+                                <label for="q27_2" class="btn_radio">6</label>
                             </li>
                             <li>
                                 <input type="radio" id="q27_3" name="q27" value="c" class="quiz">
@@ -676,7 +683,7 @@
                     <li>Région de Furina :
                         <ul class ="questions">
                             <li class="questions_style">
-                                <input type="radio" id="q33_1" name="33" value="a" class="quiz">
+                                <input type="radio" id="q33_1" name="q33" value="a" class="quiz">
                                 <label for="q33_1" class="btn_radio">Fontaine</label>
                             </li>
                             <li>
@@ -839,10 +846,13 @@
             </fieldset>
     
             <div>
-                <button type="button" id="envoie" onclick="submitQuiz()">Envoyer</button>
+                <button type="button" id="envoie" onclick="endQuiz()">Envoyer</button>
             </div>
         </form>
-        <main method="post" name="Quiz" action="#" class="box" id="Quizid" unsubmit="return false">
+
+
+
+       <form class="box" id="Quizscore" style="display:none;">
             <table id="result">
                 <caption>Résultats du quiz</caption>
                 <thead>
@@ -851,19 +861,17 @@
                         <th>Score</th>
                     </tr>
                 </thead>
-                <tbody>
-
-
-                </tbody>
-                
+                <tbody></tbody>
             </table>
+            <p id="scoreMessage"></p>
 
-        </main>
+            <input type="button" id="retour" value="Retour au quiz" onclick="returnQuiz()">
+        </form>
 
         <footer>
 
             <a href="Home.html"><img class="image" src = "../img/logo.webp" alt = "logo"></a>
-            <div id="social media">
+            <div id="social-media">
                 <a href="https://www.facebook.com/miHoYoGlobal">
                     <img src="../img/facebook.png" alt="facebook">
                 </a>
@@ -878,14 +886,14 @@
                 </a>
             </div>
             <div id="Help">
-                <h3>Help</h3>
+                <h2>Help</h2>
                 <p>FAQ</p>
                 <p>Customer service</p>
                 <p>How to guides</p>
                 <p>Contact us</p>
             </div>
             <div id="Other">
-                <h3>Other</h3>
+                <h2>Other</h2>
                 <p>Privacy Policy</p>
                 <p>Sitemapp</p>
                 <p>Subscriptions</p>
