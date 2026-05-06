@@ -1,0 +1,132 @@
+{
+  "personnages": [
+    {
+      "id": "Venti",
+      "nom": "Venti",
+      "image": "../img/Venti_avatar.webp",
+      "type_arme": "Arc",
+      "region": "Mondstadt",
+      "element": "Anémo"
+    },
+    {
+      "id": "Diluc",
+      "nom": "Diluc",
+      "image": "../img/Diluc_avatar.webp",
+      "type_arme": "Espadon",
+      "region": "Mondstadt",
+      "element": "Pyro"
+    },
+    {
+      "id": "Yanfei",
+      "nom": "Yanfei",
+      "image": "../img/Yanfei_avatar.webp",
+      "type_arme": "Catalyseur",
+      "region": "Liyue",
+      "element": "Pyro"
+    },
+    {
+      "id": "Xiao",
+      "nom": "Xiao",
+      "image": "../img/Xiao_avatar.webp",
+      "type_arme": "Arme d'hast",
+      "region": "Liyue",
+      "element": "Anémo"
+    },
+    {
+      "id": "Xingqiu",
+      "nom": "Xingqiu",
+      "image": "../img/Xingqiu_avatar.webp",
+      "type_arme": "Épée",
+      "region": "Liyue",
+      "element": "Hydro"
+    },
+    {
+      "id": "Ayaka",
+      "nom": "Kamisato Ayaka",
+      "image": "../img/Kamisato_Ayaka_avatar.webp",
+      "type_arme": "Épée",
+      "region": "Inazuma",
+      "element": "Cryo"
+    },
+    {
+      "id": "Raiden",
+      "nom": "Shogun Raiden",
+      "image": "../img/Shogun_Raiden_avatar.webp",
+      "type_arme": "Arme d'hast",
+      "region": "Inazuma",
+      "element": "Electro"
+    },
+    {
+      "id": "Nahida",
+      "nom": "Nahida",
+      "image": "../img/Nahida_avatar.webp",
+      "type_arme": "Catalyseur",
+      "region": "Sumeru",
+      "element": "Dendro"
+    },
+    {
+      "id": "Candace",
+      "nom": "Candace",
+      "image": "../img/Candace_avatar.webp",
+      "type_arme": "Arme d'hast",
+      "region": "Sumeru",
+      "element": "Hydro"
+    },
+    {
+      "id": "Tighnari",
+      "nom": "Tighnari",
+      "image": "../img/Tighnari_avatar.webp",
+      "type_arme": "Arc",
+      "region": "Sumeru",
+      "element": "Dendro"
+    },
+    {
+      "id": "Navia",
+      "nom": "Navia",
+      "image": "../img/Navia_avatar.webp",
+      "type_arme": "Espadon",
+      "region": "Fontaine",
+      "element": "Géo"
+    },
+    {
+      "id": "Neuvillette",
+      "nom": "Neuvillette",
+      "image": "../img/Neuvillette_avatar.webp",
+      "type_arme": "Catalyseur",
+      "region": "Fontaine",
+      "element": "Hydro"
+    },
+    {
+      "id": "Citlali",
+      "nom": "Citlali",
+      "image": "../img/Citlali_avatar.webp",
+      "type_arme": "Catalyseur",
+      "region": "Natlan",
+      "element": "Cryo"
+    },
+    {
+      "id": "Kachina",
+      "nom": "Kachina",
+      "image": "../img/Kachina_avatar.webp",
+      "type_arme": "Arme d'hast",
+      "region": "Natlan",
+      "element": "Géo"
+    },
+    {
+      "id": "Flins",
+      "nom": "Flins",
+      "image": "../img/Flins_avatar.webp",
+      "type_arme": "Inconnu",
+      "region": "Inconnu",
+      "element": "Inconnu"
+    },
+    {
+      "id": "Skirk",
+      "nom": "Skirk",
+      "image": "../img/Skirk_avatar.webp",
+      "type_arme": "Épée",
+      "region": "Abîme",
+      "element": "Inconnu"
+    }
+  ]
+}
