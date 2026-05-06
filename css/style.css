@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+    font-family: Montserrat, sans-serif;
+    background-color: lightskyblue;
+    margin: 0;
+}
+
+
+#bienvenu{
+    font-size: 12px;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: darkblue;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+}
+
+header a{
+    text-decoration-line: none;
+    color: #00002b;
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block; /* Pour que le transform scale fonctionne  */
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    transform: scale(1.05); /* Ton effet d'agrandissement  */
+}
+
+header a.active{
+    border-bottom: 3px solid #00002b;
+}
+
+header .image {
+    height: 60px; /* Ajuste la taille selon ton besoin */
+    width: auto;
+}
