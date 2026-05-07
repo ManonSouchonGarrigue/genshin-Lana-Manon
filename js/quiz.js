@@ -95,7 +95,7 @@ function afficherScore(score) {
 
 function getMessage(score){
     if(score < 10) return "Vous êtes débutant!";
-    else if(score < 20) return "Vous êtes advance!";
+    else if(score < 20) return "Vous êtes intermédiaire!";
     else if(score < 30) return "Vous êtes expert!";
     else return "Vous êtes Teyvatien!";
 }
