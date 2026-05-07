@@ -508,7 +508,8 @@ li:hover {
     border-bottom: 2px solid #00002b;
 }
 
-#personnages {
+#personnages,
+#armes{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-gap: 10px;

@@ -49,7 +49,7 @@ const answers = {
 };
 
 
-let essai = 0;
+let essai = 1;
 function endQuiz() {
     document.getElementById("quizForm").style.display = "none";
 
@@ -95,7 +95,7 @@ function afficherScore(score) {
 
 function getMessage(score){
     if(score < 10) return "Vous êtes débutant!";
-    else if(score < 20) return "Vous êtes advanced!";
+    else if(score < 20) return "Vous êtes connaisseur!";
     else if(score < 30) return "Vous êtes expert!";
     else return "Vous êtes Teyvatien!";
 }

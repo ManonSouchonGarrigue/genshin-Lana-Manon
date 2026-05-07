@@ -28,7 +28,7 @@ const personnages = [
         id: "Xiao",
         nom: "Xiao",
         image: "../img/Xiao_avatar.webp",
-        type_arme: "Arme d'hast",
+        type_arme: "Lance",
         region: "Liyue",
         element: "Anémo",
         rarete: 5 },
@@ -54,7 +54,7 @@ const personnages = [
         id: "Raiden",
         nom: "Shogun Raiden",
         image: "../img/Shogun_Raiden_avatar.webp",
-        type_arme: "Arme d'hast",
+        type_arme: "Lance",
         region: "Inazuma",
         element: "Electro",
         rarete: 5
@@ -72,7 +72,7 @@ const personnages = [
         id: "Candace",
         nom: "Candace",
         image: "../img/Candace_avatar.webp",
-        type_arme: "Arme d'hast",
+        type_arme: "Lance",
         region: "Sumeru",
         element: "Hydro",
         rarete: 4
@@ -117,7 +117,7 @@ const personnages = [
         id: "Kachina",
         nom: "Kachina",
         image: "../img/Kachina_avatar.webp",
-        type_arme: "Arme d'hast",
+        type_arme: "Lance",
         region: "Natlan",
         element: "Géo",
         rarete: 4
@@ -126,7 +126,7 @@ const personnages = [
         id: "Flins",
         nom: "Flins",
         image: "../img/Flins_avatar.webp",
-        type_arme: "Arme d'hast",
+        type_arme: "Lance",
         region: "Nod-krai",
         element: "Electro",
         rarete: 5
