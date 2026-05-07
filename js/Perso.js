@@ -145,7 +145,9 @@ const personnages = [
 
 const container = document.getElementById('personnages');
 const filtresBoutons = document.querySelectorAll('.filtre');
-const filtresMenu = document.querySelectorAll('details ul li');
+const filtresType = document.querySelectorAll('#type ul li');
+const filtresArme = document.querySelectorAll('#arme ul li');
+const filtresPays = document.querySelectorAll('#pays ul li');
 
 
 function afficherPersonnages(liste) {
@@ -163,13 +165,19 @@ function afficherPersonnages(liste) {
 }
 
 let rareteSelectionnee = "Tout";
-let critereMenuSelectionne = "Tout";
+let critereTypeSelectionne = "Tout";
+let critereArmeSelectionne = "Tout";
+let criterePaysSelectionne = "Tout";
 const boutonReset = document.getElementById('reset');
 
 
 boutonReset.addEventListener('click', () => {
-    critereMenuSelectionne = "Tout";
-    filtresMenu.forEach(b => b.classList.remove("item-actif"));
+    critereTypeSelectionne = "Tout";
+    critereArmeSelectionne = "Tout";
+    criterePaysSelectionne = "Tout";
+    filtresPays.forEach(b => b.classList.remove("item-actif"));
+    filtresArme.forEach(b => b.classList.remove("item-actif"));
+    filtresType.forEach(b => b.classList.remove("item-actif"));
     appliquerFiltres();
 });
 
@@ -184,11 +192,19 @@ function appliquerFiltres() {
     }
 
     // application du filtre de menu par-dessus le résultat précédent
-    if (critereMenuSelectionne !== "Tout") {
+    if (critereTypeSelectionne !== "Tout") {
         resultat = resultat.filter(p =>
-            p.region === critereMenuSelectionne ||
-            p.type_arme === critereMenuSelectionne ||
-            p.element === critereMenuSelectionne
+            p.element === critereTypeSelectionne
+        );
+    }
+    if (critereArmeSelectionne !== "Tout") {
+        resultat = resultat.filter(p =>
+            p.type_arme === critereArmeSelectionne
+        );
+    }
+    if (criterePaysSelectionne !== "Tout") {
+        resultat = resultat.filter(p =>
+            p.region === criterePaysSelectionne
         );
     }
     afficherPersonnages(resultat);
@@ -206,11 +222,31 @@ filtresBoutons.forEach(bouton => {
     });
 });
 
-filtresMenu.forEach(item => {
+filtresType.forEach(item => {
     item.addEventListener('click', () => {
         // Mise à jour de la mémoire et du style
-        critereMenuSelectionne = item.textContent;
-        filtresMenu.forEach(c => c.classList.remove("item-actif"));
+        critereTypeSelectionne = item.textContent;
+        filtresType.forEach(c => c.classList.remove("item-actif"));
+        item.classList.add("item-actif");
+        appliquerFiltres();
+    });
+});
+
+filtresArme.forEach(item => {
+    item.addEventListener('click', () => {
+        // Mise à jour de la mémoire et du style
+        critereArmeSelectionne = item.textContent;
+        filtresArme.forEach(c => c.classList.remove("item-actif"));
+        item.classList.add("item-actif");
+        appliquerFiltres();
+    });
+});
+
+filtresPays.forEach(item => {
+    item.addEventListener('click', () => {
+        // Mise à jour de la mémoire et du style
+        criterePaysSelectionne = item.textContent;
+        filtresPays.forEach(c => c.classList.remove("item-actif"));
         item.classList.add("item-actif");
         appliquerFiltres();
     });
