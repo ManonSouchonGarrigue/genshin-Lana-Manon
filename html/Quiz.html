@@ -1,17 +1,912 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Quiz</title>
-    <link rel= "stylesheet" href="../css/style.css">
-</head>
-<body>
-<header>
-    <h3 id="bienvenu">Bienvenue à Teyvat</h3>
-    <a href="Home.html" class="logo"><img class="image" src = "../img/logo.webp" alt = "logo"></a>
-    <a href="Personnages.html" class="lien">Personnages</a>
-    <a href="Armes.html" class="lien">Armes</a>
-    <a href="Quiz.html" class="active" id="lien">Quiz</a>
-</header>
-</body>
+<html lang="fr">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/quiz.js"></script>
+    </head>
+    <body>
+        <header>
+            <h3>Welcome to Teyvat</h3>
+            <a href="Home.html"><img class="image" src = "../img/logo.webp" alt = "logo"></a>
+            <a href="Personnages.html">Personnages</a>
+            <a href="Armes.html">Armes</a>
+            <a href="Quiz.html">Quiz</a>
+        </header>
+
+        <section id="intro">
+            <img src="../img/quiz.jpg" alt="photo de quiz">
+            <div id="intro_text">
+                <h1>Quiz</h1>
+                <p>
+                    Testez votre connaissances sur Teyvat ! <br>
+                    Question sur personnages, pays... <br>
+                    0-10 debutant<br>
+                    10-20 advance<br>
+                    20-30 expert<br>
+                    30-40 Teyvatien<br>
+                </p>
+
+                
+                <input type="button" value="Commencer" onclick="startQuiz()">
+
+            </div>
+
+        </section>
+
+        
+        <form id="quizForm" style="display:none;">
+            <fieldset class="quiz">
+                <ol>
+                    <li>Le monde du jeu s’appelle :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q1_1" name="q1" value="a" class="quiz">
+                                <label for="q1_1" class="btn_radio">Teyvat</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q1_2" name="q1" value="b" class="quiz">
+                                <label for="q1_2" class="btn_radio">Celestia</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q1_3" name="q1" value="c" class="quiz">
+                                <label for="q1_3" class="btn_radio">Liyue</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q1_4" name="q1" value="d" class="quiz">
+                                <label for="q1_4" class="btn_radio">Abyss</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Première région explorée :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q2_1" name="q2" value="a" class="quiz">
+                                <label for="q2_1" class="btn_radio">Inazuma</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q2_2" name="q2" value="b" class="quiz">
+                                <label for="q2_2" class="btn_radio">Mondstadt</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q2_3" name="q2" value="c" class="quiz">
+                                <label for="q2_3" class="btn_radio">Fontaine</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q2_4" name="q2" value="d" class="quiz">
+                                <label for="q2_4" class="btn_radio">Fontaine</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément de Amber :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q3_1" name="q3" value="a" class="quiz">
+                                <label for="q3_1" class="btn_radio">Cryo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q3_2" name="q3" value="b" class="quiz">
+                                <label for="q3_2" class="btn_radio">Pyro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q3_3" name="q3" value="c" class="quiz">
+                                <label for="q3_3" class="btn_radio">Hydro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q3_4" name="q3" value="d" class="quiz">
+                                <label for="q3_4" class="btn_radio">Electro</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Arme de Lisa :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q4_1" name="q4" value="a" class="quiz">
+                                <label for="q4_1" class="btn_radio">Arc</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q4_2" name="q4" value="b" class="quiz">
+                                <label for="q4_2" class="btn_radio">Épée</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q4_3" name="q4" value="c" class="quiz">
+                                <label for="q4_3" class="btn_radio">Catalyseur</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q4_4" name="q4" value="d" class="quiz">
+                                <label for="q4_4" class="btn_radio">Lance</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément de Kaeya :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q5_1" name="q5" value="a" class="quiz">
+                                <label for="q5_1" class="btn_radio">Pyro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q5_2" name="q5" value="b" class="quiz">
+                                <label for="q5_2" class="btn_radio">Cryo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q5_3" name="q5" value="c" class="quiz">
+                                <label for="q5_3" class="btn_radio">Geo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q5_4" name="q5" value="d" class="quiz">
+                                <label for="q5_4" class="btn_radio">Anémo</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Monnaie principale :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q6_1" name="q6" value="a" class="quiz">
+                                <label for="q6_1" class="btn_radio">Mora</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q6_2" name="q6" value="b" class="quiz">
+                                <label for="q6_2" class="btn_radio">Primo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q6_3" name="q6" value="c" class="quiz">
+                                <label for="q6_3" class="btn_radio">Cristal</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q6_4" name="q6" value="d" class="quiz">
+                                <label for="q6_4" class="btn_radio">Gold</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Qui accompagne le Voyageur ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q7_1" name="q7" value="a" class="quiz">
+                                <label for="q7_1" class="btn_radio">Fischl</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q7_2" name="q7" value="b" class="quiz">
+                                <label for="q7_2" class="btn_radio">Paimon</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q7_3" name="q7" value="c" class="quiz">
+                                <label for="q7_3" class="btn_radio">Noelle</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q7_4" name="q7" value="d" class="quiz">
+                                <label for="q7_4" class="btn_radio">Barbara</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément du Voyageur au début :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q8_1" name="q8" value="a" class="quiz">
+                                <label for="q8_1" class="btn_radio">Hydro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q8_2" name="q8" value="b" class="quiz">
+                                <label for="q8_2" class="btn_radio">Pyro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q8_3" name="q8" value="c" class="quiz">
+                                <label for="q8_3" class="btn_radio">Anémo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q8_4" name="q8" value="d" class="quiz">
+                                <label for="q8_4" class="btn_radio">Cryo</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément de Barbara :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q9_1" name="q9" value="a" class="quiz">
+                                <label for="q9_1" class="btn_radio">Hydro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q9_2" name="q9" value="b" class="quiz">
+                                <label for="q9_2" class="btn_radio">Pyro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q9_3" name="q9" value="c" class="quiz">
+                                <label for="q9_3" class="btn_radio">Cryo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q9_4" name="q9" value="d" class="quiz">
+                                <label for="q9_4" class="btn_radio">Geo</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Arme de Diluc :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q10_1" name="q10" value="a" class="quiz">
+                                <label for="q10_1" class="btn_radio">Arc</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q10_2" name="q10" value="b" class="quiz">
+                                <label for="q10_2" class="btn_radio">Claymore</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q10_3" name="q10" value="c" class="quiz">
+                                <label for="q10_3" class="btn_radio">Lance</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q10_4" name="q10" value="d" class="quiz">
+                                <label for="q10_4" class="btn_radio">Catalyseur</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Vrai nom de Venti :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q11_1" name="q11" value="a" class="quiz">
+                                <label for="q11_1" class="btn_radio">Morax</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q11_2" name="q11" value="b" class="quiz">
+                                <label for="q11_2" class="btn_radio">Barbatos</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q11_3" name="q11" value="c" class="quiz">
+                                <label for="q11_3" class="btn_radio">Baal</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q11_4" name="q11" value="d" class="quiz">
+                                <label for="q11_4" class="btn_radio">Nahida</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Région de Raiden Shogun :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q12_1" name="q12" value="a" class="quiz">
+                                <label for="q12_1" class="btn_radio">Fontaine</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q12_2" name="q12" value="b" class="quiz">
+                                <label for="q12_2" class="btn_radio">Inazuma</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q12_3" name="q12" value="c" class="quiz">
+                                <label for="q12_3" class="btn_radio">Sumeru</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q12_4" name="q12" value="d" class="quiz">
+                                <label for="q12_4" class="btn_radio">Liyue</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément de Xiao :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q13_1" name="q13" value="a" class="quiz">
+                                <label for="q13_1" class="btn_radio">Pyro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q13_2" name="q13" value="b" class="quiz">
+                                <label for="q13_2" class="btn_radio">Anémo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q13_3" name="q13" value="c" class="quiz">
+                                <label for="q13_3" class="btn_radio">Geo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q13_4" name="q13" value="d" class="quiz">
+                                <label for="q13_4" class="btn_radio">Cryo</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Guilde principale :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q14_1" name="q14" value="a" class="quiz">
+                                <label for="q14_1" class="btn_radio">Fatui</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q14_2" name="q14" value="b" class="quiz">
+                                <label for="q14_2" class="btn_radio">Guilde des aventuriers</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q14_3" name="q14" value="c" class="quiz">
+                                <label for="q14_3" class="btn_radio">Adepti</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q14_4" name="q14" value="d" class="quiz">
+                                <label for="q14_4" class="btn_radio">Abyss</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément de Keqing :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q15_1" name="q15" value="a" class="quiz">
+                                <label for="q15_1" class="btn_radio">Electro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q15_2" name="q15" value="b" class="quiz">
+                                <label for="q15_2" class="btn_radio">Hydro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q15_3" name="q15" value="c" class="quiz">
+                                <label for="q15_3" class="btn_radio">Pyro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q15_4" name="q15" value="d" class="quiz">
+                                <label for="q15_4" class="btn_radio">Cryo</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Chef des Chevaliers de Favonius :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q16_1" name="q16" value="a" class="quiz">
+                                <label for="q16_1" class="btn_radio">Jean</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q16_2" name="q16" value="b" class="quiz">
+                                <label for="q16_2" class="btn_radio">Diluc</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q16_3" name="q16" value="c" class="quiz">
+                                <label for="q16_3" class="btn_radio">Kaeya</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q16_4" name="q16" value="d" class="quiz">
+                                <label for="q16_4" class="btn_radio">Amber</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Dieu de Liyue :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q17_1" name="q17" value="a" class="quiz">
+                                <label for="q17_1" class="btn_radio">Barbatos</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q17_2" name="q17" value="b" class="quiz">
+                                <label for="q17_2" class="btn_radio">Morax</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q17_3" name="q17" value="c" class="quiz">
+                                <label for="q17_3" class="btn_radio">Baal</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q17_4" name="q17" value="d" class="quiz">
+                                <label for="q17_4" class="btn_radio">Focalors</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément de Chongyun :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q18_1" name="q18" value="a" class="quiz">
+                                <label for="q18_1" class="btn_radio">Cryo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q18_2" name="q18" value="b" class="quiz">
+                                <label for="q18_2" class="btn_radio">Pyro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q18_3" name="q18" value="c" class="quiz">
+                                <label for="q18_3" class="btn_radio">Hydro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q18_4" name="q18" value="d" class="quiz">
+                                <label for="q18_4" class="btn_radio">Geo</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Ville principale de Liyue :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q19_1" name="q19" value="a" class="quiz">
+                                <label for="q19_1" class="btn_radio">Harbor</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q19_2" name="q19" value="b" class="quiz">
+                                <label for="q19_2" class="btn_radio">Liyue Harbor</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q19_3" name="q19" value="c" class="quiz">
+                                <label for="q19_3" class="btn_radio">Qingce</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q19_4" name="q19" value="d" class="quiz">
+                                <label for="q19_4" class="btn_radio">Adepti</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Qui est le jumeau du Voyageur dans le lore ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q20_1" name="q20" value="a" class="quiz">
+                                <label for="q20_1" class="btn_radio">Un Archon</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q20_2" name="q20" value="b" class="quiz">
+                                <label for="q20_2" class="btn_radio">Le prince/princesse de l’Abîme</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q20_3" name="q20" value="c" class="quiz">
+                                <label for="q20_3" class="btn_radio">Un Fatui</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q20_4" name="q20" value="d" class="quiz">
+                                <label for="q20_4" class="btn_radio">Un Adepti</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Quel est le rôle de l’Ordre de l’Abîme ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q21_1" name="q21" value="a" class="quiz">
+                                <label for="q21_1" class="btn_radio">Protéger les humains</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q21_2" name="q21" value="b" class="quiz">
+                                <label for="q21_2" class="btn_radio">S’opposer aux dieux et à Celestia</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q21_3" name="q21" value="c" class="quiz">
+                                <label for="q21_3" class="btn_radio">Aider les Archons</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q21_4" name="q21" value="d" class="quiz">
+                                <label for="q21_4" class="btn_radio">Explorer Teyvat</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Région inspirée du Japon :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q22_1" name="q22" value="a" class="quiz">
+                                <label for="q22_1" class="btn_radio">Liyue</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q22_2" name="q22" value="b" class="quiz">
+                                <label for="q22_2" class="btn_radio">Inazuma</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q22_3" name="q22" value="c" class="quiz">
+                                <label for="q22_3" class="btn_radio">Fontaine</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q22_4" name="q22" value="d" class="quiz">
+                                <label for="q22_4" class="btn_radio">Natlan</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Pourquoi Venti a-t-il perdu sa Gnosis ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q23_1" name="q23" value="a" class="quiz">
+                                <label for="q23_1" class="btn_radio">Il l’a donnée volontairement</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q23_2" name="q23" value="b" class="quiz">
+                                <label for="q23_2" class="btn_radio">Elle a été volée par les Fatui</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q23_3" name="q23" value="c" class="quiz">
+                                <label for="q23_3" class="btn_radio">Il l’a détruite</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q23_4" name="q23" value="d" class="quiz">
+                                <label for="q23_4" class="btn_radio">Il l’a cachée</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Que sont les Gnosis ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q24_1" name="q24" value="a" class="quiz">
+                                <label for="q24_1" class="btn_radio">Des armes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q24_2" name="q24" value="b" class="quiz">
+                                <label for="q24_2" class="btn_radio">Des objets liés au pouvoir des Archons</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q24_3" name="q24" value="c" class="quiz">
+                                <label for="q24_3" class="btn_radio">Des créatures</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q24_4" name="q24" value="d" class="quiz">
+                                <label for="q24_4" class="btn_radio">Des villes</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Organisation ennemie :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q25_1" name="q25" value="a" class="quiz">
+                                <label for="q25_1" class="btn_radio">Abyss Order</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q25_2" name="q25" value="b" class="quiz">
+                                <label for="q25_2" class="btn_radio">Fatui</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q25_3" name="q25" value="c" class="quiz">
+                                <label for="q25_3" class="btn_radio">Knights</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q25_4" name="q25" value="d" class="quiz">
+                                <label for="q25_4" class="btn_radio">Adepti</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Dragon de Mondstadt :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q26_1" name="q26" value="a" class="quiz">
+                                <label for="q26_1" class="btn_radio">Azhdaha</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q26_2" name="q26" value="b" class="quiz">
+                                <label for="q26_2" class="btn_radio">Dvalin</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q26_3" name="q26" value="c" class="quiz">
+                                <label for="q26_3" class="btn_radio">Osial</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q26_4" name="q26" value="d" class="quiz">
+                                <label for="q26_4" class="btn_radio">Boreas</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Nombre d’Archons connus (éléments) :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q27_1" name="q27" value="a" class="quiz">
+                                <label for="q27_1" class="btn_radio">5</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q27_2" name="q27" value="b" class="quiz">
+                                <label for="q27_2" class="btn_radio">6</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q27_3" name="q27" value="c" class="quiz">
+                                <label for="q27_3" class="btn_radio">7</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q27_4" name="q27" value="d" class="quiz">
+                                <label for="q27_4" class="btn_radio">8</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Quel est l’objectif des Fatui ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q28_1" name="q28" value="a" class="quiz">
+                                <label for="q28_1" class="btn_radio">Détruire Teyvat</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q28_2" name="q28" value="b" class="quiz">
+                                <label for="q28_2" class="btn_radio">Collecter les Gnosis des Archons</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q28_3" name="q28" value="c" class="quiz">
+                                <label for="q28_3" class="btn_radio">Protéger Celestia</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q28_4" name="q28" value="d" class="quiz">
+                                <label for="q28_4" class="btn_radio">Aider le Voyageur</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Qui dirige les Fatui ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q29_1" name="q29" value="a" class="quiz">
+                                <label for="q29_1" class="btn_radio">Morax</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q29_2" name="q29" value="b" class="quiz">
+                                <label for="q29_2" class="btn_radio">Barbatos</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q29_3" name="q29" value="c" class="quiz">
+                                <label for="q29_3" class="btn_radio">La Tsaritsa</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q29_4" name="q29" value="d" class="quiz">
+                                <label for="q29_4" class="btn_radio">Nahida</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Région du désert :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q30_1" name="q30" value="a" class="quiz">
+                                <label for="q30_1" class="btn_radio">Sumeru</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q30_2" name="q30" value="b" class="quiz">
+                                <label for="q30_2" class="btn_radio">Fontaine</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q30_3" name="q30" value="c" class="quiz">
+                                <label for="q30_3" class="btn_radio">Liyue</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q30_4" name="q30" value="d" class="quiz">
+                                <label for="q30_4" class="btn_radio">Natlan</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément de Nahida :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q31_1" name="q31" value="a" class="quiz">
+                                <label for="q31_1" class="btn_radio">Dendro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q31_2" name="q31" value="b" class="quiz">
+                                <label for="q31_2" class="btn_radio">Pyro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q31_3" name="q31" value="c" class="quiz">
+                                <label for="q31_3" class="btn_radio">Hydro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q31_4" name="q31" value="d" class="quiz">
+                                <label for="q31_4" class="btn_radio">Electro</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Élément de Neuvillette :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q32_1" name="q32" value="a" class="quiz">
+                                <label for="q32_1" class="btn_radio">Hydro</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q32_2" name="q32" value="b" class="quiz">
+                                <label for="q32_2" class="btn_radio">Geo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q32_3" name="q32" value="c" class="quiz">
+                                <label for="q32_3" class="btn_radio">Cryo</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q32_4" name="q32" value="d" class="quiz">
+                                <label for="q32_4" class="btn_radio">Anémo</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Région de Furina :
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q33_1" name="q33" value="a" class="quiz">
+                                <label for="q33_1" class="btn_radio">Fontaine</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q33_2" name="q33" value="b" class="quiz">
+                                <label for="q33_2" class="btn_radio">Inazuma</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q33_3" name="q33" value="c" class="quiz">
+                                <label for="q33_3" class="btn_radio">Sumeru</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q33_4" name="q33" value="d" class="quiz">
+                                <label for="q33_4" class="btn_radio">Natlan</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Quel est l’objectif principal du Voyageur ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q34_1" name="q34" value="a" class="quiz">
+                                <label for="q34_1" class="btn_radio">Devenir Archon</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q34_2" name="q34" value="b" class="quiz">
+                                <label for="q34_2" class="btn_radio">Trouver son frère/sa sœur</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q34_3" name="q34" value="c" class="quiz">
+                                <label for="q34_3" class="btn_radio">Diriger Teyvat</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q34_4" name="q34" value="d" class="quiz">
+                                <label for="q34_4" class="btn_radio">Battre les Fatui</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Qui sépare le Voyageur de son jumeau au début ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q35_1" name="q35" value="a" class="quiz">
+                                <label for="q35_1" class="btn_radio">La Tsaritsa</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q35_2" name="q35" value="b" class="quiz">
+                                <label for="q35_2" class="btn_radio">Une déesse inconnue</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q35_3" name="q35" value="c" class="quiz">
+                                <label for="q35_3" class="btn_radio">Venti</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q35_4" name="q35" value="d" class="quiz">
+                                <label for="q35_4" class="btn_radio">Zhongli</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Quel est le rôle des Archons ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q36_1" name="q36" value="a" class="quiz">
+                                <label for="q36_1" class="btn_radio">Diriger les guildes</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q36_2" name="q36" value="b" class="quiz">
+                                <label for="q36_2" class="btn_radio">Gouverner les régions avec leur élément</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q36_3" name="q36" value="c" class="quiz">
+                                <label for="q36_3" class="btn_radio">Protéger les Fatui</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q36_4" name="q36" value="d" class="quiz">
+                                <label for="q36_4" class="btn_radio">Créer des armes</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Que représente Celestia dans le lore ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q37_1" name="q37" value="a" class="quiz">
+                                <label for="q37_1" class="btn_radio">Une ville</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q37_2" name="q37" value="b" class="quiz">
+                                <label for="q37_2" class="btn_radio">Le royaume des dieux</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q37_3" name="q37" value="c" class="quiz">
+                                <label for="q37_3" class="btn_radio">Une arme</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q37_4" name="q37" value="d" class="quiz">
+                                <label for="q37_4" class="btn_radio">Une guilde</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Quelle nation a été détruite il y a 500 ans ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q38_1" name="q38" value="a" class="quiz">
+                                <label for="q38_1" class="btn_radio">Fontaine</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q38_2" name="q38" value="b" class="quiz">
+                                <label for="q38_2" class="btn_radio">Khaenri'ah</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q38_3" name="q38" value="c" class="quiz">
+                                <label for="q38_3" class="btn_radio">Sumeru</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q38_4" name="q38" value="d" class="quiz">
+                                <label for="q38_4" class="btn_radio">Natlan</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Qui est impliqué dans la destruction de Khaenri'ah ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q39_1" name="q39" value="a" class="quiz">
+                                <label for="q39_1" class="btn_radio">Les Fatui</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q39_2" name="q39" value="b" class="quiz">
+                                <label for="q39_2" class="btn_radio">Celestia / les dieux</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q39_3" name="q39" value="c" class="quiz">
+                                <label for="q39_3" class="btn_radio">Les Adepti</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q39_4" name="q39" value="d" class="quiz">
+                                <label for="q39_4" class="btn_radio">Les Archons uniquement</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Quel est le lien entre l’Ordre de l’Abîme et Khaenri'ah ?
+                        <ul class ="questions">
+                            <li class="questions_style">
+                                <input type="radio" id="q40_1" name="q40" value="a" class="quiz">
+                                <label for="q40_1" class="btn_radio">Aucun</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q40_2" name="q40" value="b" class="quiz">
+                                <label for="q40_2" class="btn_radio">Ils viennent de Khaenri'ah</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q40_3" name="q40" value="c" class="quiz">
+                                <label for="q40_3" class="btn_radio">Ils sont des Archons</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="q40_4" name="q40" value="d" class="quiz">
+                                <label for="q40_4" class="btn_radio">Ils protègent Mondstadt</label>
+                            </li>
+                        </ul>
+                    </li>
+                              
+                </ol>
+                
+            </fieldset>
+    
+            <div>
+                <button type="button" id="envoie" onclick="endQuiz()">Envoyer</button>
+            </div>
+        </form>
+
+
+
+       <form class="box" id="Quizscore" style="display:none;">
+            <table id="result">
+                <caption>Résultats du quiz</caption>
+                <thead>
+                    <tr>
+                        <th>Essai</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p id="scoreMessage"></p>
+
+            <input type="button" id="retour" value="Retour au quiz" onclick="returnQuiz()">
+        </form>
+
+        <footer>
+
+            <a href="Home.html"><img class="image" src = "../img/logo.webp" alt = "logo"></a>
+            <div id="social-media">
+                <a href="https://www.facebook.com/miHoYoGlobal">
+                    <img src="../img/facebook.png" alt="facebook">
+                </a>
+                <a href="https://www.instagram.com/mihoyo/">
+                    <img src="../img/instagram.svg" alt="instagram">
+                </a>
+                <a href="https://www.youtube.com/c/miHoYo">
+                    <img src="../img/youtube.png" alt="youtube">
+                </a>
+                <a href="https://www.tiktok.com/@mihoyo">
+                    <img src="../img/tiktok.png" alt="tiktok">
+                </a>
+            </div>
+            <div id="Help">
+                <h2>Help</h2>
+                <p>FAQ</p>
+                <p>Customer service</p>
+                <p>How to guides</p>
+                <p>Contact us</p>
+            </div>
+            <div id="Other">
+                <h2>Other</h2>
+                <p>Privacy Policy</p>
+                <p>Sitemapp</p>
+                <p>Subscriptions</p>
+            </div>
+
+        </footer>
+
+
+
+    </body>
+
+
+
+
+
 </html>
