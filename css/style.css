@@ -401,3 +401,145 @@ caption {
     cursor: pointer;
 
 }
+
+#nouv-personnage{
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+#nouv-personnage img{
+    height: 500px;
+    width: auto;
+    border-radius: 20px;
+}
+#nav-bar{
+    display: flex;
+    margin:25px;
+    color: #00002b;
+    font-weight: bold;
+}
+.filtre{
+    background-color: lightskyblue;
+    color: #00002b;
+    font-weight: bold;
+    padding: 10px 25px;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    border-color: #00002b;
+    margin:15px;
+}
+.bouton-actif {
+    background-color: #00002b;
+    color: lightskyblue;
+}
+#nav-bar div{
+    margin-left:100px;
+}
+#liens-personnages{
+    display: flex;
+}
+.side-bar {
+    width: 250px;
+    border: 2px darkblue; /* Bordure extérieure du menu */
+    background-color: #afdffd;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+
+/* Style de chaque ligne du menu */
+details {
+    border-bottom: 1px solid #0202ff;
+}
+
+details:last-child {
+    border-bottom: none; /* Enlève la bordure sur le dernier élément */
+}
+
+summary {
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    transition: background-color 0.2s;
+
+}
+
+summary:hover {
+    background-color: #40b3fa;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    color: #00002b;
+    margin: 0;
+    padding: 10px 15px 15px 30px;
+    background-color: #cfe8f8;
+}
+
+li {
+    padding: 5px 0;
+    color: darkblue;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+li:hover {
+    color: #00002b;
+    cursor: pointer;
+    border-bottom: 2px solid #00002b;
+}
+
+.item-actif {
+    color: #00002b;
+    border-bottom: 2px solid #00002b;
+}
+
+#personnages {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 10px;
+    background-color: lightskyblue;
+    border-radius: 15px;
+}
+
+
+.personnage {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.personnage img {
+    padding: 20px;
+    width: 60%;
+    border: 2px solid #00002b;
+}
+
+#reset{
+    background-color: #afdffd;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    color: #00002b;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    border-color: #00002b;
+}
