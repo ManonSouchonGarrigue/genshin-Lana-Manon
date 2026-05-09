@@ -544,3 +544,18 @@ li:hover {
     border-radius: 10px;
     border-color: #00002b;
 }
+
+
+
+.btn{
+    width: 150px;
+    padding: 10px;
+    background-color: #00002b;
+    color: #afdffd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+
+}
